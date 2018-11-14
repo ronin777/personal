@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
 /**
  * 
  * @author Fredy Vazquez
@@ -17,7 +18,7 @@ import javax.persistence.Table;
  */
 @Entity(name = "employee")
 @Table(name = "employee", schema = "devsao")
-public class Employee implements Serializable{
+public class Employee implements Serializable {
 
 	/**
 	 * 
@@ -30,12 +31,12 @@ public class Employee implements Serializable{
 	private String empPassword;
 	private String empDni;
 	private String empEmail;
-	
+
 	public Employee() {
-		
+
 	}
 
-	//Getters
+	// Getters
 	@Id
 	@Column(name = "emp_id")
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "sequence")
@@ -43,7 +44,7 @@ public class Employee implements Serializable{
 	public Long getEmpId() {
 		return empId;
 	}
-	
+
 	@Column(name = "emp_name")
 	public String getEmpName() {
 		return empName;
@@ -69,7 +70,7 @@ public class Employee implements Serializable{
 		return empEmail;
 	}
 
-	//SETTERS
+	// SETTERS
 	public void setEmpId(Long empId) {
 		this.empId = empId;
 	}
@@ -99,6 +100,5 @@ public class Employee implements Serializable{
 		return "Employee [empId=" + empId + ", empName=" + empName + ", empAlias=" + empAlias + ", empPassword="
 				+ empPassword + ", empNi=" + empDni + ", empEmail=" + empEmail + "]";
 	}
-	
-	
+
 }
