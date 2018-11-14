@@ -31,7 +31,7 @@ public class PersonalApplicationTests {
 	@Ignore
 	public void getOneEmployee() {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("id", "20");
+		params.put("id", "5");
 		RestTemplate restTemplate = new RestTemplate();
 		Employee employee = restTemplate.getForObject(uri + "/employee/{id}", Employee.class, params);
 		System.out.println("Lista de Empleado \n\n" + employee.toString());
@@ -58,12 +58,12 @@ public class PersonalApplicationTests {
 	}
 
 	@Test
-	@Ignore
+//	@Ignore
 	public void deleteEmploye() {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("id", "20");
+		params.put("id", "5");
 		RestTemplate restTemplate = new RestTemplate();
-		restTemplate.delete(uri + "/employeedel/{id}", Employee.class, params);
+		restTemplate.delete(uri + "/employeedel/{id}", params);
 		System.out.println("Ha Sido Completado... ");
 	}
 
