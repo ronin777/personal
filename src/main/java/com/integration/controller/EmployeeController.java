@@ -44,9 +44,9 @@ public class EmployeeController {
 	public Mono<Employee> createEmploye(@Valid @RequestBody Employee employee) {
 		return employeeService.createEmployee(employee);
 	}
-	
+
 	@DeleteMapping(value = "/employeedel/{id}")
-	public Mono<ResponseEntity<String>> deleteEmployee(@PathVariable (value = "id") String id){
+	public Mono<ResponseEntity<String>> deleteEmployee(@PathVariable(value = "id") String id) {
 		Employee employee = employeeService.getById(new Long(id));
 		employeeService.delete(employee);
 		return Mono.just(new ResponseEntity<>("Elimicación Completa", HttpStatus.ACCEPTED));
